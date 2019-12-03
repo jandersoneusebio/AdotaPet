@@ -12,17 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import jdbc.dao.LoginDAO;
 import jdbc.modelo.Usuarios;
-import actions.*;
 
 public class LoginFrame {
 	public static void main(String[] args) {
 		Principal success = new Principal();
-		Actions acao = new Actions();
 
 		// Labels
 		JLabel email = new JLabel("E-mail: ");
@@ -35,7 +32,6 @@ public class LoginFrame {
 		entSenha.setColumns(10);
 
 		// Botões
-		JRadioButton lembrar = new JRadioButton("Lembrar usuário");
 		JButton entrar = new JButton("Entrar");
 		JCheckBox ckMostrar = new JCheckBox("Mostrar Senha");
 
@@ -44,7 +40,6 @@ public class LoginFrame {
 		panel.add(entEmail);
 		panel.add(senha);
 		panel.add(entSenha);
-		panel.add(lembrar);
 		panel.add(ckMostrar);
 		panel.add(entrar);
 
@@ -53,9 +48,12 @@ public class LoginFrame {
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.pack();
 		janela.setVisible(true);
-		janela.setSize(200, 170);
+		janela.setSize(200, 160);
 		janela.setResizable(false);
 		janela.setLocationRelativeTo(null);
+		
+		entrar.getRootPane().setDefaultButton(entrar);
+		
 
 		ActionListener logar = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,8 +66,7 @@ public class LoginFrame {
 						janela.setVisible(false);
 						success.iniciarPrincipal();
 					} else {
-						JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos", "ERRO",
-								JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos", "ERRO",JOptionPane.ERROR_MESSAGE);
 					}
 				} catch (HeadlessException | SQLException ex) {
 					ex.printStackTrace();
