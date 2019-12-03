@@ -10,7 +10,15 @@ public class Usuarios implements Serializable{
 	private String sobrenome;
 	private String email;
 	private String senha;
+	private int codigo;
 	
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 	
 	public String getSenha() {
 		return senha;
@@ -18,11 +26,11 @@ public class Usuarios implements Serializable{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Long getIdEditora() {
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdEditora(Long idEditora) {
-		this.idUsuario = idEditora;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	public String getNome() {
 		return nome;

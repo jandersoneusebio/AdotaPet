@@ -2,7 +2,7 @@ package jdbc.modelo;
 
 import java.io.Serializable;
 
-public class Pets implements Serializable{
+public class Ficha implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int idPet;
 	private String pet;
@@ -10,18 +10,9 @@ public class Pets implements Serializable{
 	private String raca;
 	private String idade;
 	private String tipoIdade;
-	private boolean deficiente;
 	private String deficiencia;
 	private String sexo;
-	private boolean adocao;
 	
-	
-	public boolean isAdocao() {
-		return adocao;
-	}
-	public void setAdocao(boolean adocao) {
-		this.adocao = adocao;
-	}
 	public String getPet() {
 		return pet;
 	}
@@ -65,12 +56,6 @@ public class Pets implements Serializable{
 	}
 	public void setTipoIdade(String tipoIdade) {
 		this.tipoIdade = tipoIdade;
-	}
-	public boolean isDeficiente() {
-		return deficiente;
-	}
-	public void setDeficiente(boolean deficiente) {
-		this.deficiente = deficiente;
 	}
 	public String getDeficiencia() {
 		return deficiencia;
